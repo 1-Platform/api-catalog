@@ -12,7 +12,7 @@ builds:
       - CGO_ENABLED=0
     binary: apic
     dir: ./cmd/cli
-    ldflags: b-X main.version={{.Version}}
+    ldflags: -X main.version={{.Version}}
     goos:
       - linux
       - windows

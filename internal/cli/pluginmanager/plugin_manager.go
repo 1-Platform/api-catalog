@@ -69,7 +69,7 @@ func (p *PluginManager) LoadBuiltinPlugin() error {
 		path = filepath.Clean(filepath.Join(cwd, fmt.Sprintf("./plugins/builtin/%s", p.ApiType)))
 	} else {
 		homeDir, _ := os.UserHomeDir()
-		path = filepath.Clean(filepath.Join(homeDir, fmt.Sprintf(".apic/plugins/builtin/%s", p.ApiType)))
+		path = filepath.Clean(filepath.Join(homeDir, fmt.Sprintf(".apic/builtin/%s", p.ApiType)))
 	}
 
 	builtInPlugin, err := os.ReadDir(path)

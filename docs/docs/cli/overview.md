@@ -6,7 +6,7 @@ It mainly validates your API schema file, runs it against the rules you have spe
 
 ## CLI Architecture
 
-[image-to-be-added-cli-arch]
+![cli-architecture](/img/cli-arch.png)
 
 ### Config
 
@@ -39,6 +39,14 @@ plugins:
 ```
 
 </details>
+
+:::info
+
+Rules section points towards builtin apic rules
+
+Where as plugins sections points towards user defined rules
+
+:::
 
 ### Rules
 

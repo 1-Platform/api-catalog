@@ -15,7 +15,7 @@ rules:
     file: "url_plural_checker.js"
     options:
       type: "singular"
-  url_similiarity_check:
-    file: "url_similiarity_check.js"
+  url_similarity_check:
+    file: "url_similarity_check.js"
     options:
       weight: 0.9

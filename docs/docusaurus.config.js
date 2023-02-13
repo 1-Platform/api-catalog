@@ -37,12 +37,13 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/1-platform/api-catalog/tree/main/docs",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/1-platform/api-catalog/tree/main/blog",
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl: "https://github.com/1-platform/api-catalog/tree/main/blog",
+        // },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
         },
@@ -62,12 +63,12 @@ const config = {
       image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "API Catalog",
-        // logo: {
-        //   alt: "API Catalog Next Docs",
-        //   src: "j",
-        // },
+        logo: {
+          alt: "API Catalog Next Docs",
+          src: "/img/logo.png",
+        },
         items: [
-          { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/1-platform/api-catalog",
             label: "GitHub",
@@ -83,8 +84,8 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "One Platform",
+                to: "https://one.redhat.com",
               },
               {
                 label: "GitHub",

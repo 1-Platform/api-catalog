@@ -40,7 +40,7 @@ export default function (config, options) {
   let numberOfResponses = 0;
   let numbnerOfFalseResponses = 0;
 
-  const weight = options?.weight || 0.8;
+  const weight = options?.weight || 0.9;
   const blackListPaths = options?.blacklist_paths || [];
   const baseURLs = options?.base_urls || [];
 
@@ -55,8 +55,8 @@ export default function (config, options) {
       if (j !== i) {
         const pathB = stripOfBaseURL(paths[j], baseURLs);
 
-        const similiarity = compareTwoStrings(pathA, pathB);
-        if (similiarity > weight) {
+        const similarity = compareTwoStrings(pathA, pathB);
+        if (similarity > weight) {
           numbnerOfFalseResponses++;
 
           // get all methods
@@ -65,7 +65,7 @@ export default function (config, options) {
             .toUpperCase();
 
           config.report({
-            message: `URL ${paths[i]} similiar to ${paths[j]}, similiarity: ${similiarity}`,
+            message: `URL ${paths[i]} similar to ${paths[j]}, similarity: ${similarity}`,
             path: paths[i],
             method: methods,
           });

@@ -1,26 +1,33 @@
 package main
 
 import (
-	"log"
-
 	"github.com/1-platform/api-catalog/internal/api"
 	"github.com/1-platform/api-catalog/internal/server/http"
+	"github.com/1-platform/api-catalog/pkg/logger"
 )
 
 var version = "development"
 
 func main() {
-	apiService, err := api.New(version)
+	logger, err := logger.New(version != "development")
 	if err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
 	}
 
-	httpServer, err := http.New(&http.Config{Port: "8000"}, apiService)
+	apiService, err := api.New(version)
 	if err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
+	}
+
+	httpServer, err := http.New(&http.Config{Port: "8000"},
+		logger,
+		apiService,
+	)
+	if err != nil {
+		logger.Fatal(err)
 	}
 
 	if err := httpServer.Listen(); err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
 	}
 }

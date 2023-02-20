@@ -1,0 +1,11 @@
+FROM golang:1.18.1-alpine AS base
+
+RUN go install github.com/cosmtrek/air@latest
+
+
+WORKDIR /app
+
+COPY . .
+
+CMD ["air","-c",".air.toml"]
+

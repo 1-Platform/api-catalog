@@ -14,3 +14,6 @@ generate-plugin-zip:
 
 build:
 	go build -ldflags "-X main.version=${version}"  -o ./apic cmd/cli/main.go 
+
+dev-api:
+	air -c .air.toml

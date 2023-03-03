@@ -80,6 +80,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       react-router-dom: ^6.8.2
+      sass: ^1.58.0
       typescript: ^4.9.3
       vite: ^4.1.0
     dependencies:
@@ -93,8 +94,9 @@ importers:
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.11
       '@vitejs/plugin-react-swc': 3.2.0_vite@4.1.4
+      sass: 1.58.0
       typescript: 4.9.5
-      vite: 4.1.4
+      vite: 4.1.4_sass@1.58.0
 
 packages:
 
@@ -3651,7 +3653,7 @@ packages:
       vite: ^4
     dependencies:
       '@swc/core': 1.3.37
-      vite: 4.1.4
+      vite: 4.1.4_sass@1.58.0
     dev: true
 
   /@webassemblyjs/ast/1.11.1:
@@ -9941,7 +9943,7 @@ packages:
       vfile-message: 2.0.4
     dev: false
 
-  /vite/4.1.4:
+  /vite/4.1.4_sass@1.58.0:
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -9970,6 +9972,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.17.3
+      sass: 1.58.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

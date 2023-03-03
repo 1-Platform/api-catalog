@@ -1,0 +1,34 @@
+@import '@patternfly/react-styles/css/utilities/Spacing/spacing.css',
+'@patternfly/react-styles/css/utilities/Text/text.css',
+'@patternfly/react-styles/css/utilities/Sizing/sizing.css';
+
+.pf-c-page {
+  height: 100vh;
+}
+
+.pf-c-masthead.pf-m-display-inline {
+  --pf-c-masthead--m-display-inline__main--MinHeight: 4rem
+}
+
+.pf-c-page__sidebar{
+  --pf-c-page__sidebar--Width: 240px;
+  --pf-c-page__sidebar-body--PaddingTop: 0;
+}
+
+.pf-c-nav__link{
+  --pf-c-nav__link--hover--after--BorderLeftWidth: 4px;
+  --pf-c-nav__link--hover--after--BorderColor: var(--pf-global--primary-color--100);
+  --pf-c-nav__link--m-current--after--BorderColor: var(--pf-global--primary-color--100);
+  --pf-c-nav__link--m-current--Color: var(--pf-global--primary-color--100);
+  transition: all 150ms linear;
+}
+
+// utility classes
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
+.cursor-pointer {
+  cursor: pointer;
+}

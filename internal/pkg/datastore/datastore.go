@@ -8,7 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-func New(uri string) (*mongo.Client, error) {
+func New(uri, databaseName string) (*mongo.Database, error) {
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(uri))
 	if err != nil {
 		return nil, err
@@ -18,5 +18,5 @@ func New(uri string) (*mongo.Client, error) {
 		return nil, err
 	}
 
-	return client, nil
+	return client.Database(databaseName), nil
 }

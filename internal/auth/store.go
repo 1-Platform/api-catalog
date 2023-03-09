@@ -16,7 +16,7 @@ type AuthStore struct {
 	collectionName string
 }
 
-func NewAuthStore(db *mongo.Database) *AuthStore {
+func NewStore(db *mongo.Database) *AuthStore {
 	return &AuthStore{
 		mongoDriver:    db,
 		collectionName: "auth",

@@ -1,6 +1,9 @@
 package api
 
-import "time"
+import (
+	"github.com/1-platform/api-catalog/internal/teams"
+	"time"
+)
 
 var (
 	now = time.Now()
@@ -8,6 +11,7 @@ var (
 
 type API struct {
 	Version string
+	teams   *teams.Teams
 }
 
 func (a *API) Health() (map[string]any, error) {
@@ -18,6 +22,9 @@ func (a *API) Health() (map[string]any, error) {
 	}, nil
 }
 
-func New(ver string) (*API, error) {
-	return &API{Version: ver}, nil
+func New(ver string, tm *teams.Teams) (*API, error) {
+	return &API{
+		Version: ver,
+		teams:   tm,
+	}, nil
 }

@@ -6,6 +6,7 @@ type Config struct {
 	MongoDbURI     string `mapstructure:"mongodb_uri"`
 	MongoDbName    string `mapstructure:"mongodb_database"`
 	Port           uint16 `mapstructure:"port"`
+	Host           string `mapstructure:"host"`
 	ServerURL      string `mapstructure:"server_url"`
 	ApplicationURL string `mapstructure:"application_url"`
 	Auth           Auth   `mapstructure:"auth"`
@@ -46,6 +47,7 @@ func New(path string) (*Config, error) {
 	viper.SetDefault("auth.hash_key", "4Wpob%Up26^%2rqx3Z88TW9LucjFMuh%")
 	viper.SetDefault("auth.block_key", "%ynb%nk3GX7HMuP%9H*m2F#5h2%DV8x*")
 	viper.SetDefault("port", 4200)
+	viper.SetDefault("host", "0.0.0.0")
 	viper.SetDefault("server_url", "http://localhost:4200")
 	viper.SetDefault("application_url", "http://localhost:3000")
 	viper.SetDefault("auth.generic_oauth.email_path", "email")

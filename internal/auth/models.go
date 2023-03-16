@@ -11,11 +11,11 @@ type User struct {
 	Email string             `json:"pid"`
 	Name  string             `json:"name"`
 
-	Oauth2Uid          string    `bson:"oauth2_uid"`
-	Oauth2Provider     string    `bson:"oauth2_provider"`
-	Oauth2AccessToken  string    `bson:"oauth2_access_token"`
-	Oauth2RefreshToken string    `bson:"oauth2_refresh_token"`
-	Oauth2Expiry       time.Time `bson:"oauth2_expiry"`
+	Oauth2Uid          string    `bson:"oauth2_uid" json:"oauth2_uid"`
+	Oauth2Provider     string    `bson:"oauth2_provider" json:"oauth2_provider"`
+	Oauth2AccessToken  string    `bson:"oauth2_access_token" json:"-"`
+	Oauth2RefreshToken string    `bson:"oauth2_refresh_token" json:"-"`
+	Oauth2Expiry       time.Time `bson:"oauth2_expiry" json:"-"`
 }
 
 func (u *User) GetPID() string {

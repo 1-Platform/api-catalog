@@ -7,4 +7,11 @@ services:
       - ./tmp/db:/data/db
     ports:
       - 27017:27017
-
+  smtp-server:
+    image: lytrax/mailhog:latest # https://github.com/mailhog/MailHog/issues/353#issuecomment-821137362
+    restart: always
+    logging:
+      driver: 'none' # disable saving logs
+    ports:
+      - 1025:1025 # SMTP server
+      - 8025:8025 # Web UI

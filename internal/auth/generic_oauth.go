@@ -5,23 +5,28 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 
 	"github.com/goccy/go-json"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/jmespath/go-jmespath"
 )
 
-func extractInfo[V any](searchPath string, data map[string]any) (V, error) {
+func extractInfo(searchPath string, data map[string]any) (string, error) {
 	result, err := jmespath.Search(searchPath, data)
 	if err != nil {
-		var t V
-		return t, err
+		return "", err
 	}
-	t, ok := result.(V)
+	val, ok := result.(string)
 	if !ok {
-		return t, errors.New("Invalid value")
+		newVal, ok := result.(int)
+		if !ok {
+			return "", errors.New("Invalid value")
+		}
+		val = strconv.Itoa(int(newVal))
 	}
-	return t, nil
+
+	return val, nil
 }
 
 func GenericOauthUserInfo(token string, userInfoUrl string,
@@ -48,16 +53,15 @@ func GenericOauthUserInfo(token string, userInfoUrl string,
 
 		claim := jwt.MapClaims{}
 		_, err = jwt.ParseWithClaims(string(data), claim, nil)
-		fmt.Println(claim["email"])
-		if email, err = extractInfo[string](emailPath, claim); err != nil {
+		if email, err = extractInfo(emailPath, claim); err != nil {
 			return nil, err
 		}
 
-		if uid, err = extractInfo[string](userIdPath, claim); err != nil {
+		if uid, err = extractInfo(userIdPath, claim); err != nil {
 			return nil, err
 		}
 
-		if name, err = extractInfo[string](displayNamePath, claim); err != nil {
+		if name, err = extractInfo(displayNamePath, claim); err != nil {
 			return nil, err
 		}
 		return map[string]any{
@@ -73,15 +77,15 @@ func GenericOauthUserInfo(token string, userInfoUrl string,
 		return nil, err
 	}
 
-	if email, err = extractInfo[string](emailPath, userInfo); err != nil {
+	if email, err = extractInfo(emailPath, userInfo); err != nil {
 		return nil, err
 	}
 
-	if uid, err = extractInfo[string](userIdPath, userInfo); err != nil {
+	if uid, err = extractInfo(userIdPath, userInfo); err != nil {
 		return nil, err
 	}
 
-	if name, err = extractInfo[string](displayNamePath, userInfo); err != nil {
+	if name, err = extractInfo(displayNamePath, userInfo); err != nil {
 		return nil, err
 	}
 

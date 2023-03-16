@@ -1,4 +1,4 @@
-package http
+package response
 
 import "github.com/go-playground/validator/v10"
 
@@ -16,7 +16,7 @@ func (res *Response) Error() string {
 	return res.Message
 }
 
-func SuccessRes(data interface{}, message string) *Response {
+func Success(data interface{}, message string) *Response {
 	return &Response{
 		Message: message,
 		Success: true,

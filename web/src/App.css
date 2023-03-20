@@ -1,6 +1,5 @@
-@import '@patternfly/react-styles/css/utilities/Spacing/spacing.css',
-'@patternfly/react-styles/css/utilities/Text/text.css',
-'@patternfly/react-styles/css/utilities/Sizing/sizing.css';
+@tailwind base;
+@tailwind components;
 
 .pf-c-page {
   height: 100vh;
@@ -23,12 +22,4 @@
   transition: all 150ms linear;
 }
 
-// utility classes
-.font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-
-.cursor-pointer {
-  cursor: pointer;
-}
+@tailwind utilities;

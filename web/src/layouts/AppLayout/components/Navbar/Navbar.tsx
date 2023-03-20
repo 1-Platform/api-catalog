@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Brand,
   Button,
   ButtonVariant,
   Flex,
@@ -19,13 +20,13 @@ import {
 } from '@patternfly/react-core';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
+import logo from '@app/assets/logo.svg';
+
 export const Navbar = () => (
   <Masthead>
     <MastheadMain>
       <MastheadBrand>
-        <Title headingLevel="h6" className="font-mono">
-          API CATALOG
-        </Title>
+        <Brand src={logo} alt="API Catalog" />
       </MastheadBrand>
     </MastheadMain>
     <MastheadContent>

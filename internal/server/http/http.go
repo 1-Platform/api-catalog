@@ -91,7 +91,7 @@ func New(cfg *Config, log *logger.Logger,
 	e.Use(echo.WrapMiddleware(authMod.InjectMiddleware()))
 	authMiddleware := middlewares.NewAuthMiddleware(a)
 
-	e.GET("/health", h.Health)
+	e.GET("/", h.Health)
 
 	// team route
 	teamRoute := e.Group("/teams", authMiddleware.IsAuthenticated)
@@ -116,7 +116,7 @@ func New(cfg *Config, log *logger.Logger,
 		teams.TeamAdminRole,
 	}))
 
-	e.GET("/", func(c echo.Context) error {
+	e.GET("/user", func(c echo.Context) error {
 		user, err := authy.GetUserInfo(c.Request().Context())
 		if err == nil {
 			u := user.(*auth.User)
@@ -126,7 +126,7 @@ func New(cfg *Config, log *logger.Logger,
 			}, "user logged in"))
 			return nil
 		}
-		c.JSON(http.StatusOK, response.Success(nil, "user not logged in"))
+		c.JSON(http.StatusOK, response.Error(nil, "user not logged in"))
 		return nil
 	})
 

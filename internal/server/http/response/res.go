@@ -24,6 +24,14 @@ func Success(data interface{}, message string) *Response {
 	}
 }
 
+func Error(data interface{}, message string) *Response {
+	return &Response{
+		Message:   message,
+		Success:   false,
+		ErrorText: data,
+	}
+}
+
 func ErrValidationFailed(err validator.ValidationErrors) *Response {
 	errMap := make(map[string]interface{})
 

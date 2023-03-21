@@ -5,7 +5,7 @@ import { Page } from '@patternfly/react-core';
 import { Navbar } from './components/Navbar';
 
 export const AppLayout = (): JSX.Element => (
-  <Page>
+  <Page header={<Navbar />}>
     <Outlet />
   </Page>
 );

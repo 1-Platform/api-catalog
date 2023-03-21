@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { Button, Card, CardBody, PageSection, Title, TitleSizes } from '@patternfly/react-core';
+import { Button, Card, CardBody, PageSection, Title } from '@patternfly/react-core';
 import { ChevronLeftIcon } from '@patternfly/react-icons';
 
 import welcomeImg from '@app/assets/hello-there.svg';

@@ -22,4 +22,19 @@
   transition: all 150ms linear;
 }
 
+.pf-c-label{
+  --pf-c-label--BorderRadius: 4px;
+}
+
+@layer components {
+  .menu:hover {
+    color: theme('colors.primary');
+    @apply bg-blue-200/25;
+  }
+  .menu-active{
+   color: theme('colors.primary');
+    @apply bg-blue-200/25;
+  }
+}
+
 @tailwind utilities;

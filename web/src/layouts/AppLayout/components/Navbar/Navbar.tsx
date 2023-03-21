@@ -18,15 +18,17 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
-import logo from '@app/assets/logo.svg';
+import logo from '@app/assets/logo-long.svg';
+
+const AVATAR =
+  'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads02&accessoriesType=Blank&hairColor=PastelPink&facialHairType=Blank&clotheType=ShirtCrewNeck&clotheColor=PastelYellow&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Twinkle&skinColor=DarkBrown';
 
 export const Navbar = () => (
-  <Masthead>
+  <Masthead backgroundColor="light" className="border-b border-solid border-gray-200">
     <MastheadMain>
-      <MastheadBrand>
-        <Brand src={logo} alt="API Catalog" />
+      <MastheadBrand className="flex items-center">
+        <Brand src={logo} className="h-8" alt="API Catalog" />
       </MastheadBrand>
     </MastheadMain>
     <MastheadContent>
@@ -43,10 +45,10 @@ export const Navbar = () => (
                 component="a"
                 aria-label="DOC URL"
                 variant={ButtonVariant.link}
-                style={{ color: '#fff' }}
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-black font-bold"
               >
                 Go to Docs
               </Button>
@@ -64,7 +66,7 @@ export const Navbar = () => (
                     spaceItems={{ default: 'spaceItemsSm' }}
                   >
                     <FlexItem>
-                      <Avatar src={imgAvatar} alt="Avatar image" size="lg" />
+                      <Avatar src={AVATAR} alt="Avatar image" size="lg" />
                     </FlexItem>
                     <FlexItem>
                       <Title headingLevel="h6" size={TitleSizes.lg}>
@@ -80,7 +82,12 @@ export const Navbar = () => (
                   </Flex>
                 }
               >
-                <Avatar src={imgAvatar} alt="Avatar image" size="md" className="cursor-pointer" />
+                <Avatar
+                  src={AVATAR}
+                  alt="Avatar image"
+                  size="md"
+                  className="cursor-pointer h-12 w-12"
+                />
               </Popover>
             </ToolbarItem>
           </ToolbarGroup>

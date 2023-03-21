@@ -1,1 +1,0 @@
-export {SchemaListPage} from './SchemaListPage'

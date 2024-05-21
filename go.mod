@@ -7,7 +7,7 @@ require (
 	github.com/dop251/goja v0.0.0-20230128084908-78b980256d04
 	github.com/gertd/go-pluralize v0.2.1
 	github.com/getkin/kin-openapi v0.113.0
-	github.com/goccy/go-json v0.10.0
+	github.com/goccy/go-json v0.10.3
 	github.com/invopop/yaml v0.1.0
 	github.com/pelletier/go-toml/v2 v2.0.6
 	github.com/spf13/cobra v1.6.1

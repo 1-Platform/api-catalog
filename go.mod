@@ -1,6 +1,8 @@
 module github.com/1-platform/api-catalog
 
-go 1.18
+go 1.21.0
+
+toolchain go1.23.0
 
 require (
 	github.com/charmbracelet/lipgloss v0.6.0
@@ -9,7 +11,7 @@ require (
 	github.com/getkin/kin-openapi v0.113.0
 	github.com/goccy/go-json v0.10.0
 	github.com/invopop/yaml v0.1.0
-	github.com/pelletier/go-toml/v2 v2.0.6
+	github.com/pelletier/go-toml/v2 v2.2.3
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.15.0
 )

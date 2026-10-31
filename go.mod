@@ -1,10 +1,10 @@
 module github.com/1-platform/api-catalog
 
-go 1.18
+go 1.26.0
 
 require (
 	github.com/charmbracelet/lipgloss v0.6.0
-	github.com/dop251/goja v0.0.0-20230128084908-78b980256d04
+	github.com/dop251/goja v0.0.0-20261031103838-cf2ff0ec0b31
 	github.com/gertd/go-pluralize v0.2.1
 	github.com/getkin/kin-openapi v0.113.0
 	github.com/goccy/go-json v0.10.0
@@ -17,10 +17,12 @@ require (
 require (
 	github.com/aymanbagabas/go-osc52 v1.2.1 // indirect
 	github.com/dlclark/regexp2 v1.7.0 // indirect
+	github.com/dlclark/regexp2/v2 v2.11.0 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/go-openapi/jsonpointer v0.19.5 // indirect
 	github.com/go-openapi/swag v0.19.5 // indirect
 	github.com/go-sourcemap/sourcemap v2.1.3+incompatible // indirect
+	github.com/google/pprof v0.0.0-20230207041349-798e818bf904 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
@@ -41,7 +43,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	golang.org/x/sys v0.4.0 // indirect
-	golang.org/x/text v0.5.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
